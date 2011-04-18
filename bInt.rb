@@ -9,7 +9,7 @@ class  Integer
 	def choose k
 		return 0 if k>self || self<0
 		a = [k, self-k]
-		return ((a.max+1)..self).reduce(:*)/a.min.!
+		return ((a.max+1)..self).reduce(:*)/a.min.factorial
 	end
 	
 	def reverse
