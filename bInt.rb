@@ -25,6 +25,6 @@ class  Integer
 	end
 	
 	def permutation? other
-	    return (self.to_s.split("").sort.join("")) == (other.to_s.split("").sort.join(""))
-    end
+		return (self.to_s.split("").sort.join("")) == (other.to_s.split("").sort.join(""))
+	end
 end
