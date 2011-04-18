@@ -6,6 +6,10 @@ class  Integer
 		return (1..self).reduce(:*)
 	end
 	
+	def fact
+		return self.factorial
+	end
+	
 	def choose k
 		return 0 if k>self || self<0
 		a = [k, self-k]
