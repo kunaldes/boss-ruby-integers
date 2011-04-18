@@ -21,7 +21,8 @@ class  Integer
 	end
 	
 	def phi
-		return (self*self.prime_division.map{|x,y| Rational(x-1,x)}.reduce(:*)).to_i
+		primes = self.prime_division.map{|x,y| x}
+		return (self*primes.map{|x| x-1}.reduce(:*)/primes.reduce(:*)).to_i
 	end
 	
 	def permutation? other
