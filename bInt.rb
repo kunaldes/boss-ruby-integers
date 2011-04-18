@@ -1,7 +1,7 @@
 require "Prime"
 
 class  Integer
-	def !
+	def factorial
 		return 1 if self == 0
 		return (1..self).reduce(:*)
 	end
