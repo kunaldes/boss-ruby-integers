@@ -32,4 +32,9 @@ class  Integer
 	def permutation? other
 		return (self.to_s.split("").sort.join("")) == (other.to_s.split("").sort.join(""))
 	end
+	
+	def rad
+		return 1 if self == 1
+		return self.prime_division.map{|x,y| x}.reduce(:*)
+	end
 end
