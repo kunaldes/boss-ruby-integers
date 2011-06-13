@@ -29,7 +29,7 @@ class Integer
 		return self.to_s.reverse.to_i
 	end
 	
-	#Returns true if a number is a palindrome
+	#Returns true if a number is equal to its reverse
 	def palindrome?
 		return self.reverse == self
 	end
