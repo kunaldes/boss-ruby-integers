@@ -2,7 +2,7 @@ require "Prime"
 
 class Integer
 	
-	#returns nil for values <=0
+	#returns nil for values < 0
 	#returns a bignum if necessary
 	def factorial
 		return 1 if self == 0
@@ -17,8 +17,9 @@ class Integer
 	#Returns 0 if k > self or k < 0
 	#Returns nil if self < 0
 	def choose k
+		return nil if self < 0
 		return 0 if k>self || k<0
-		return 1 if k==0 && self == 0
+		return 1 if k == self || k == 0
 		a = [k, self-k]
 		return ((a.max+1)..self).reduce(:*)/a.min.factorial
 	end
@@ -48,5 +49,18 @@ class Integer
 	def rad
 		return 1 if self == 1
 		return self.prime_division.map{|x,y| x}.reduce(:*)
+	end
+	
+	
+	def increasing?
+		i = "0"
+		self.to_s.split("").each{|x| return false if x < i; i = x}
+		return true
+	end
+	
+	def decreasing?
+		i = "9"
+		self.to_s.split("").each{|x| return false if x > i; i = x}
+		return true
 	end
 end
